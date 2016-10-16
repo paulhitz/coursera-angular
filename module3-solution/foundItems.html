@@ -1,0 +1,11 @@
+<h3>Menu Search Results</h3>
+
+<ul>
+  <li ng-repeat="item in menuSearch.found">{{item.name}}, {{item.short_name}}, {{item.description}}
+    <button class="btn btn-default" ng-click="menuSearch.removeItem({index: $index})">
+      <span class="glyphicon glyphicon-ok"></span> Don't want this one!
+    </button>
+  </li>
+</ul>
+
+<p class="text-danger" ng-if="menuSearch.found.length === 0">Nothing found</p>
