@@ -17,20 +17,7 @@
       <button class="btn btn-primary" ng-click="menuSearch.search(menuSearch.searchTerm);">Narrow It Down For Me!</button>
     </div>
 
-    <!-- <ul>
-      <li ng-repeat="item in menuSearch.found">{{item.name}}, {{item.short_name}}, {{item.description}}
-        <button class="btn btn-default" ng-click="menuSearch.removeItem($index)">
-          <span class="glyphicon glyphicon-ok"></span> Don't want this one!
-        </button>
-      </li>
-    </ul>
-    <p class="text-danger" ng-if="menuSearch.found.length === 0">Nothing found</p> -->
-
-
-
-    <!-- found-items should be implemented as a component -->
-    <found-items items="menuSearch.found" on-remove="menuSearch.removeItem(index)"></found-items>
-
+    <found-items found="menuSearch.found" on-remove="menuSearch.removeItem(index)"></found-items>
   </div>
 
   <script src="angular.min.js"></script>

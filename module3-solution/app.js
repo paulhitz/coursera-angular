@@ -12,7 +12,7 @@ function FoundItemsDirective() {
   var ddo = {
     templateUrl: 'foundItems.html',
     scope: {
-      items: '<',
+      found: '<',
       onRemove: '&'
     },
     controller: NarrowItDownController,
@@ -36,7 +36,6 @@ function NarrowItDownController(MenuSearchService) {
         menuSearch.found = response;
       })
       .catch(function (error) {
-        console.log(error);
         menuSearch.found = [];
       });
     } else {
