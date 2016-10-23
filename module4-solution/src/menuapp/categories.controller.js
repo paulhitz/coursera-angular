@@ -1,14 +1,12 @@
 (function () {
 'use strict';
 
-angular.module('MenuApp')
-.controller('CategoriesController', CategoriesController);
+angular.module('MenuApp').controller('CategoriesController', CategoriesController);
 
-
-CategoriesController.$inject = ['items'];
-function CategoriesController(items) {
+CategoriesController.$inject = ['allCategories'];
+function CategoriesController(allCategories) {
   var categories = this;
-  categories.items = items.data;
+  categories.allCategories = allCategories.data;
 }
 
 })();
