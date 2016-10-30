@@ -3,6 +3,7 @@
 
 <p ng-hide="infoCtrl.userDetails.user">Not Signed Up Yet. <a ui-sref="public.subscribe">Sign up Now!</a></p>
 
+<ul ng-show="infoCtrl.userDetails.user">
   <li>First Name: {{infoCtrl.userDetails.user.firstname}}</li>
   <li>Last Name: {{infoCtrl.userDetails.user.lastname}}</li>
   <li>Email: {{infoCtrl.userDetails.user.email}}</li>
