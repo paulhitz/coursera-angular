@@ -1,0 +1,41 @@
+
+<h1>Sign up</h1>
+
+<form name='regForm' novalidate>
+
+  <input type="text" name="firstname" placeholder="First Name" ng-model="subscribeCtrl.user.firstname" required>
+    <span ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
+      This field is mandatory.
+    </span>
+    <br>
+
+  <input type="text" name="lastname" placeholder="Last Name" ng-model="subscribeCtrl.user.lastname" required>
+    <span ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">
+      This field is mandatory.
+    </span>
+    <br>
+
+  <input type="email" name="email" placeholder="Email" ng-model="subscribeCtrl.user.email" required>
+    <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+      Must be a valid email address: handle@domain format
+    </span>
+    <br>
+
+  <input type="text" name="phone" placeholder="Phone ###-###-####" ng-model="subscribeCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+    <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+      Phone must be in the format ###-###-####.
+    </span>
+    <br>
+
+    <input type="text" name="menuitem" placeholder="Menu Number (e.g. A1)" ng-model="subscribeCtrl.user.menuitem" required>
+      <span ng-if="subscribeCtrl.error">
+        No such menu number exists
+      </span>
+      <br>
+
+  <button id="reg-submit-button" ng-disabled="regForm.$invalid" ng-click="subscribeCtrl.submit()">Submit</button>
+</form>
+
+<h1 ng-if="subscribeCtrl.error === false">
+  Your information has been saved
+</h1>

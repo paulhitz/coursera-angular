@@ -1,0 +1,19 @@
+
+<h1>My Info</h1>
+
+<p ng-hide="infoCtrl.userDetails.user">Not Signed Up Yet. <a ui-sref="public.subscribe">Sign up Now!</a></p>
+
+  <li>First Name: {{infoCtrl.userDetails.user.firstname}}</li>
+  <li>Last Name: {{infoCtrl.userDetails.user.lastname}}</li>
+  <li>Email: {{infoCtrl.userDetails.user.email}}</li>
+  <li>Phone: {{infoCtrl.userDetails.user.phone}}</li>
+  <li>Favorite: {{infoCtrl.userDetails.user.menuitem}}
+    <ul>
+      <li>Title: {{infoCtrl.userDetails.menuItem.name}}</li>
+      <li>Description: {{infoCtrl.userDetails.menuItem.description}}</li>
+      <li>Image:
+        <img class="img-responsive" width="250" height="150" ng-src="{{infoCtrl.ApiPath}}/images/{{infoCtrl.userDetails.menuItem.short_name}}.jpg" alt="{{infoCtrl.userDetails.menuItem.name}}">
+      </li>
+    </ul>
+  </li>
+</ul>
